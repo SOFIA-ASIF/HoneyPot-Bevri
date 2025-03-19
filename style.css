@@ -1,0 +1,420 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar section */
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ddd;
+}
+
+/* Hero section */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('./images/hero image.webp');
+  /* filter: brightness(60%); Reduce brightness to make the logo stand out */
+
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  z-index: 1;
+}
+
+.bevri-logo {
+  position: relative;
+  z-index: 2;
+  width: 32%;
+  height: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  background-size: cover;
+}
+
+/* Welcome section */
+.welcome-container {
+  display: flex;
+  height: 50vh;
+}
+
+.welcome-section {
+  background-color: #034a17;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  width: 30%; /* Adjusted width for the text section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.welcome-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: white;
+  margin: 10px auto;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.welcome-section .menu-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.welcome-section .menu-btn:hover {
+  background-color: white;
+  color: #034a17;
+}
+
+.welcome-image {
+  flex: 1; /* Takes the remaining space */
+  background-image: url('./images/welcome.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%; /* Ensures it matches the container height */
+  filter: brightness(1.2);
+}
+
+
+/* flavors section */
+
+.flavors-section {
+  display: flex;
+  height: 70vh;
+  scroll-behavior: smooth;
+}
+
+.flavors-image {
+  flex: 1;
+  background-image: url('./images/flavors.webp'); /* Correct image file */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flavors-content {
+  background-color: #111; /* Dark background */
+  color: white;
+  padding: 50px;
+  text-align: center;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flavors-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.flavors-content h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: white;
+  margin: 10px auto;
+}
+
+.flavors-content p {
+  font-size: 18px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.order-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: white;
+  color: #111;
+}
+
+
+/* images part */
+
+.gallery-section {
+  background-color: #111;
+  
+  overflow: hidden;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px
+}
+
+.gallery-container img {
+  width: 20%; /* Adjust width to fit 5 images */
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* border-radius: 5px; */
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* fotter section */
+.footer-section {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content{
+  padding: 20px;
+}
+.footer-content p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.social-icons {
+  margin: 15px 0;
+}
+
+.social-icons i {
+  margin: 0 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: #888;
+}
+
+.footer-nav{
+  padding: 20px;
+}
+
+.footer-nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  gap: 10px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  padding: 20;
+}
+
+.footer-nav a:hover {
+  color: #888;
+}
+
+.footer-logo img {
+  margin: 20px 0;
+  max-width: 150px;
+}
+
+.accessibility {
+  margin-top: 20px;
+}
+
+.accessibility p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.accessibility-icons i {
+  margin: 0 5px;
+  font-size: 24px;
+  color: #5abeb4;
+  transition: color 0.3s ease;
+}
+
+.accessibility-icons i:hover {
+  color: white;
+}
+
+.footer-section hr {
+  margin: 20px auto;
+  width: 80%;
+  border-color: #444;
+}
+/* Responsive Design for Small Devices */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .navbar a {
+      font-size: 14px;
+  }
+
+  /* Hero Section */
+  .hero {
+      height: 60vh;
+      background-position: center;
+  }
+
+  .bevri-logo {
+      width: 70%; /* Scale down the logo for small screens */
+  }
+
+  /* Welcome Section */
+  .welcome-section h2 {
+      font-size: 24px;
+  }
+
+  .welcome-section p {
+      font-size: 16px;
+      padding: 0 20px;
+  }
+
+  .menu-btn, .order-btn {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  /* Flavors Section */
+  .flavors-section h2 {
+      font-size: 22px;
+  }
+
+  .flavors-section p {
+      font-size: 15px;
+      padding: 0 20px;
+  }
+
+  /* Gallery Section */
+  .gallery-container {
+      flex-wrap: wrap;
+      gap: 5px;
+  }
+
+  .gallery-container img {
+      width: 100%; /* Full width on small screens */
+      max-width: 100%;
+      height: auto;
+  }
+
+  /* Footer */
+  .social-icons i {
+      font-size: 20px;
+      margin: 5px;
+  }
+
+  .footer-logo img {
+      max-width: 80px;
+  }
+
+  .footer-nav a {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further Adjustments for Extra Small Devices */
+  .navbar a {
+      font-size: 12px;
+  }
+
+  .hero {
+      height: 50vh;
+  }
+
+  .menu-btn, .order-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+
+  .welcome-section h2, .flavors-section h2 {
+      font-size: 20px;
+  }
+
+  .social-icons i {
+      font-size: 18px;
+  }
+
+  .footer-nav a {
+      font-size: 12px;
+  }
+}
