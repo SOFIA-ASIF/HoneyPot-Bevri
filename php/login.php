@@ -4,9 +4,11 @@ include '../db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ip_address = $_SERVER['REMOTE_ADDR'];
 
     // SQL query to check user credentials
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $query = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -14,11 +16,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (mysqli_num_rows($result) > 0) {
-        // Successful login - redirect to the main website page (index.html)
-        header("Location: ../index.html");
-        exit();
+        $row = mysqli_fetch_assoc($result);
+
+        // Verify the hashed password
+        if (password_verify($password, $row['password'])) {
+            // Successful login - log the activity
+            $activity = "Successful login";
+            $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+            exec($command);
+
+            // Redirect to the main website page (index.html)
+            header("Location: ../index.html");
+            exit();
+        } else {
+            // Unsuccessful login - log the activity
+            $activity = "Unsuccessful login - Invalid password";
+            $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+            exec($command);
+
+            echo "Invalid username or password.";
+        }
     } else {
-        // Failed login - show error message
+        // Unsuccessful login - log the activity
+        $activity = "Unsuccessful login - Username not found";
+        $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+        exec($command);
+
         echo "Invalid username or password.";
     }
 }
@@ -37,6 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="username" placeholder="Username" required style="width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 5px; background-color: #002200; color: white;"><br>
         <input type="password" name="password" placeholder="Password" required style="width: 100%; padding: 12px; margin: 8px 0; border: none; border-radius: 5px; background-color: #002200; color: white;"><br>
         <button type="submit" style="width: 100%; padding: 12px; margin-top: 10px; background-color: #005500; border: none; border-radius: 5px; color: white; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">Login</button>
+        <br><br>
+        <a href="register.php" style="color: white; text-decoration: underline;">Don't have an account? Register here</a>
     </form>
 </body>
 </html>

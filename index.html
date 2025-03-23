@@ -122,6 +122,18 @@
         </div>
       </div>
     </footer>
+<!-- Comment Section -->
+<div id="comments-section" style="margin: 40px auto; padding: 20px; width: 60%; background-color: #003300; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); color: white;">
+  <h2 style="text-align: center; margin-bottom: 20px;">Comments</h2>
+  <form method="POST" action="php/comment.php" style="display: flex; flex-direction: column; gap: 10px;">
+      <textarea name="comment" placeholder="Write your comment here..." required style="padding: 12px; background-color: #002200; color: white; border: none; border-radius: 5px;"></textarea>
+      <button type="submit" style="padding: 12px; background-color: #005500; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#007700';" onmouseout="this.style.backgroundColor='#005500';">Submit Comment</button>
+  </form>
+  <div id="comments-display" style="margin-top: 20px;">
+      <!-- Display fetched comments here -->
+  </div>
+</div>
+
 
     <script>
       // Select all links with the class "scroll-link"

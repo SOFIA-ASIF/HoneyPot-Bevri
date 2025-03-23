@@ -313,6 +313,11 @@ html {
   width: 80%;
   border-color: #444;
 }
+
+
+
+
+
 /* Responsive Design for Small Devices */
 @media (max-width: 768px) {
   /* Navbar */
@@ -387,6 +392,7 @@ html {
   .footer-nav a {
     font-size: 14px;
   }
+
 }
 
 @media (max-width: 480px) {

@@ -1,29 +1,35 @@
 <?php
-include 'db.php';
+session_start();
+include '../db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $comment = $_POST['comment'];
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $ua = $_SERVER['HTTP_USER_AGENT'];
-    $params = "comment=$comment";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Check if the user is logged in and get the username
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+    } else {
+        $username = "Anonymous";
+    }
 
-    shell_exec("python3 ../app/log_handler.py $ip '$ua' '/php/comment.php' '$params'");
+    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $ip_address = $_SERVER['REMOTE_ADDR'];
 
-    $query = "INSERT INTO comments (comment) VALUES ('$comment')";
-    mysqli_query($conn, $query);
-}
-?>
+    // Save comment to the database using a prepared statement
+    $stmt = $conn->prepare("INSERT INTO comments (username, comment) VALUES (?, ?)");
+    $stmt->bind_param("ss", $username, $comment);
 
-<form method="POST" action="">
-    <h2>Leave a Comment</h2>
-    <textarea name="comment" placeholder="Your comment here"></textarea><br>
-    <button type="submit">Submit</button>
-</form>
+    if ($stmt->execute()) {
+        echo "Comment submitted successfully!";
 
-<h3>Comments:</h3>
-<?php
-$result = mysqli_query($conn, "SELECT * FROM comments");
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "<p>{$row['comment']}</p>";  // vulnerable to XSS
+        // Log the comment submission
+        $activity = "Comment submitted: " . $comment;
+        $command = "python ../app/log_handler.py '$ip_address' '$username' '' '$user_agent' '$activity'";
+        exec($command);
+    } else {
+        echo "Error submitting comment: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
