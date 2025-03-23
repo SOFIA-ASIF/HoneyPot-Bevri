@@ -1,49 +1,34 @@
-import pymysql
+import csv
 from datetime import datetime
 import sys
+import os
+
+# Path to your CSV log file
+CSV_LOG_FILE = "../logs/request_log.csv"
 
 def log_activity(ip_address, username, password, user_agent, activity):
     try:
-        conn = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='',
-            database='honeypot_db'
-        )
-        cursor = conn.cursor()
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(CSV_LOG_FILE), exist_ok=True)
 
-        # Create table if it doesn't exist
-        create_table_query = """
-        CREATE TABLE IF NOT EXISTS logs (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            timestamp DATETIME,
-            ip_address VARCHAR(50),
-            username VARCHAR(50),
-            password VARCHAR(255),
-            user_agent TEXT,
-            activity TEXT
-        );
-        """
-        cursor.execute(create_table_query)
-        
-        # Log for debugging
-        print(f"Logging activity: {activity} from {ip_address} with user {username}")
-
-        # Insert log into the table
-        query = """INSERT INTO logs (timestamp, ip_address, username, password, user_agent, activity) 
-                   VALUES (%s, %s, %s, %s, %s, %s)"""
+        # Prepare the log entry
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        cursor.execute(query, (timestamp, ip_address, username, password, user_agent, activity))
-        conn.commit()
-        
-        # Log success message
+        log_entry = [timestamp, ip_address, username, password, user_agent, activity]
+
+        # Check if file exists to write header
+        file_exists = os.path.isfile(CSV_LOG_FILE)
+
+        # Write to CSV
+        with open(CSV_LOG_FILE, mode='a', newline='', encoding='utf-8') as csv_file:
+            writer = csv.writer(csv_file)
+            if not file_exists:
+                writer.writerow(['timestamp', 'ip_address', 'username', 'password', 'user_agent', 'activity'])  # Header
+            writer.writerow(log_entry)
+
         print(f"Successfully logged: {activity} from {ip_address}")
 
     except Exception as e:
         print(f"Error logging activity: {e}")
-
-    finally:
-        conn.close()
 
 if __name__ == "__main__":
     if len(sys.argv) == 6:

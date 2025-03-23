@@ -7,7 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     $ip_address = $_SERVER['REMOTE_ADDR'];
 
-    // SQL query to check user credentials
+    // Python and script paths
+    $pythonPath = "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe";
+    $scriptPath = "C:\\xampp\\htdocs\\HoneyPot\\app\\log_handler.py";
+
     $query = "SELECT * FROM users WHERE username='$username'";
     $result = mysqli_query($conn, $query);
 
@@ -18,34 +21,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
 
-        // Verify the hashed password
         if (password_verify($password, $row['password'])) {
-            // Successful login - log the activity
             $activity = "Successful login";
-            $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+            $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
             exec($command);
 
-            // Redirect to the main website page (index.html)
             header("Location: ../index.html");
             exit();
         } else {
-            // Unsuccessful login - log the activity
             $activity = "Unsuccessful login - Invalid password";
-            $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+            $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
             exec($command);
 
             echo "Invalid username or password.";
         }
     } else {
-        // Unsuccessful login - log the activity
         $activity = "Unsuccessful login - Username not found";
-        $command = "python ../app/log_handler.py '$ip_address' '$username' '$password' '$user_agent' '$activity'";
+        $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
         exec($command);
 
         echo "Invalid username or password.";
     }
 }
 ?>
+
 
 
 <html lang="en">
