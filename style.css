@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -45,11 +46,9 @@ body, html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('./images/hero image.webp');
+  background-image: url("./images/hero image.webp");
   /* filter: brightness(60%); Reduce brightness to make the logo stand out */
-
 }
-
 
 .hero::before {
   content: "";
@@ -130,14 +129,13 @@ body, html {
 
 .welcome-image {
   flex: 1; /* Takes the remaining space */
-  background-image: url('./images/welcome.webp');
+  background-image: url("./images/welcome.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%; /* Ensures it matches the container height */
   filter: brightness(1.2);
 }
-
 
 /* flavors section */
 
@@ -149,7 +147,7 @@ body, html {
 
 .flavors-image {
   flex: 1;
-  background-image: url('./images/flavors.webp'); /* Correct image file */
+  background-image: url("./images/flavors.webp"); /* Correct image file */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -205,12 +203,11 @@ body, html {
   color: #111;
 }
 
-
 /* images part */
 
 .gallery-section {
   background-color: #111;
-  
+
   overflow: hidden;
 }
 
@@ -218,7 +215,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1px
+  gap: 1px;
 }
 
 .gallery-container img {
@@ -242,7 +239,7 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.footer-content{
+.footer-content {
   padding: 20px;
 }
 .footer-content p {
@@ -267,7 +264,7 @@ body, html {
   color: #888;
 }
 
-.footer-nav{
+.footer-nav {
   padding: 20px;
 }
 
@@ -320,101 +317,104 @@ body, html {
 @media (max-width: 768px) {
   /* Navbar */
   .navbar ul {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .navbar a {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   /* Hero Section */
   .hero {
-      height: 60vh;
-      background-position: center;
+    height: 60vh;
+    background-position: center;
   }
 
   .bevri-logo {
-      width: 70%; /* Scale down the logo for small screens */
+    width: 70%; /* Scale down the logo for small screens */
   }
 
   /* Welcome Section */
   .welcome-section h2 {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   .welcome-section p {
-      font-size: 16px;
-      padding: 0 20px;
+    font-size: 16px;
+    padding: 0 20px;
   }
 
-  .menu-btn, .order-btn {
-      font-size: 14px;
-      padding: 8px 16px;
+  .menu-btn,
+  .order-btn {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 
   /* Flavors Section */
   .flavors-section h2 {
-      font-size: 22px;
+    font-size: 22px;
   }
 
   .flavors-section p {
-      font-size: 15px;
-      padding: 0 20px;
+    font-size: 15px;
+    padding: 0 20px;
   }
 
   /* Gallery Section */
   .gallery-container {
-      flex-wrap: wrap;
-      gap: 5px;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   .gallery-container img {
-      width: 100%; /* Full width on small screens */
-      max-width: 100%;
-      height: auto;
+    width: 100%; /* Full width on small screens */
+    max-width: 100%;
+    height: auto;
   }
 
   /* Footer */
   .social-icons i {
-      font-size: 20px;
-      margin: 5px;
+    font-size: 20px;
+    margin: 5px;
   }
 
   .footer-logo img {
-      max-width: 80px;
+    max-width: 80px;
   }
 
   .footer-nav a {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   /* Further Adjustments for Extra Small Devices */
   .navbar a {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .hero {
-      height: 50vh;
+    height: 50vh;
   }
 
-  .menu-btn, .order-btn {
-      font-size: 12px;
-      padding: 6px 12px;
+  .menu-btn,
+  .order-btn {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 
-  .welcome-section h2, .flavors-section h2 {
-      font-size: 20px;
+  .welcome-section h2,
+  .flavors-section h2 {
+    font-size: 20px;
   }
 
   .social-icons i {
-      font-size: 18px;
+    font-size: 18px;
   }
 
   .footer-nav a {
-      font-size: 12px;
+    font-size: 12px;
   }
 }

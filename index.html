@@ -1,124 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Honeypot Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
+      <!-- Navbar -->
 
-<!-- Navbar -->
-
-        <nav class="navbar">
-            <ul>
-                <li><a href="#welcome" class="scroll-link" data-target="welcome">Welcome</a></li>
-                <li><a href="#menu" class="scroll-link" data-target="menu">Menu</a></li>
-                <li><a href="#gallery" class="scroll-link" data-target="gallery">Gallery</a></li>
-                <li><a href="#about" class="scroll-link" data-target="contact">Contact</a></li>
-                <li><a href="#about" class="scroll-link" data-target="about">About</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="#welcome" class="scroll-link" data-target="welcome"
+              >Welcome</a
+            >
+          </li>
+          <li>
+            <a href="#menu" class="scroll-link" data-target="menu">Menu</a>
+          </li>
+          <li>
+            <a href="#gallery" class="scroll-link" data-target="gallery"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="scroll-link" data-target="contact"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="scroll-link" data-target="about">About</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-<!-- Hero Section -->
+    <!-- Hero Section -->
 
     <section class="hero">
-        <img src="./images/logo.avif" alt="Bevri Logo" class="bevri-logo">
+      <img src="./images/logo.avif" alt="Bevri Logo" class="bevri-logo" />
     </section>
 
-<!-- Welcome Section -->
+    <!-- Welcome Section -->
 
-<section class="welcome-container" id="welcome">
-    <div class="welcome-section">
+    <section class="welcome-container" id="welcome">
+      <div class="welcome-section">
         <div class="welcome-content">
-            <h2>WELCOME</h2>
-            <p>Bevri (Georgian for "a lot") tempts with cheesy khachapuri, juicy khinkali dumplings and flavorful grilled meats. Explore our unique Georgian wines too! Dine in Palo Alto, Los Altos or order delivery.</p>
-            <button class="menu-btn">MENU</button>
+          <h2>WELCOME</h2>
+          <p>
+            Bevri (Georgian for "a lot") tempts with cheesy khachapuri, juicy
+            khinkali dumplings and flavorful grilled meats. Explore our unique
+            Georgian wines too! Dine in Palo Alto, Los Altos or order delivery.
+          </p>
+          <button class="menu-btn">MENU</button>
         </div>
-    </div>
-    <div class="welcome-image"></div>
-</section>
+      </div>
+      <div class="welcome-image"></div>
+    </section>
 
-<!-- Flavors section -->
+    <!-- Flavors section -->
 
-<section class="flavors-section " id="menu">
-    <div class="flavors-image"></div>
-    <div class="flavors-content">
+    <section class="flavors-section" id="menu">
+      <div class="flavors-image"></div>
+      <div class="flavors-content">
         <h2>AUTHENTIC GEORGIAN FLAVORS</h2>
-        <p>Savor the freshest ingredients and vibrant flavors sourced from the diverse regions of Georgia. Our menu features a delightful array of traditional Georgian dishes prepared with a modern touch.</p>
-        <button class="order-btn" onclick="window.location.href='php/login.php'">ORDER</button>
+        <p>
+          Savor the freshest ingredients and vibrant flavors sourced from the
+          diverse regions of Georgia. Our menu features a delightful array of
+          traditional Georgian dishes prepared with a modern touch.
+        </p>
+        <button
+          class="order-btn"
+          onclick="window.location.href='php/login.php'"
+        >
+          ORDER
+        </button>
+      </div>
+    </section>
 
-    </div>
-</section>
- 
-<!-- image part -->
+    <!-- image part -->
 
-<section class="gallery-section" id="gallery">
-    <div class="gallery-container">
-        <img src="./images/fir1.avif" alt="Fir Image 1">
-        <img src="./images/fir2.avif" alt="Fir Image 2">
-        <img src="./images/fir3.avif" alt="Fir Image 3">
-        <img src="./images/fir4.avif" alt="Fir Image 4">
-        <img src="./images/fir5.avif" alt="Fir Image 5">
-    </div>
-</section>
+    <section class="gallery-section" id="gallery">
+      <div class="gallery-container">
+        <img src="./images/fir1.avif" alt="Fir Image 1" />
+        <img src="./images/fir2.avif" alt="Fir Image 2" />
+        <img src="./images/fir3.avif" alt="Fir Image 3" />
+        <img src="./images/fir4.avif" alt="Fir Image 4" />
+        <img src="./images/fir5.avif" alt="Fir Image 5" />
+      </div>
+    </section>
 
-
-<!-- fOOTER SECTION -->
-<footer class="footer-section " id="about">
-    <div class="footer-content">
+    <!-- fOOTER SECTION -->
+    <footer class="footer-section" id="about">
+      <div class="footer-content">
         <p>Made with ❤️ by Ghanta People</p>
         <div class="social-icons">
-            <i class="fab fa-brands fa-x-twitter"> </i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-linkedin"></i>
+          <i class="fab fa-brands fa-x-twitter"> </i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-linkedin"></i>
         </div>
         <nav class="footer-nav">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Gallery</a>
-            <a href="#">Reviews</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Gallery</a>
+          <a href="#">Reviews</a>
         </nav>
         <div class="footer-logo">
-            <img src="./images/logo2.webp" alt="Bevri Logo">
+          <img src="./images/logo2.webp" alt="Bevri Logo" />
         </div>
         <div class="accessibility">
-            <p>Website Accessibility Assistance</p>
-            <div class="accessibility-icons">
-                <i class="fas fa-wheelchair"></i>
-                <i class="fas fa-desktop"></i>
-            </div>
+          <p>Website Accessibility Assistance</p>
+          <div class="accessibility-icons">
+            <i class="fas fa-wheelchair"></i>
+            <i class="fas fa-desktop"></i>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
+    <script>
+      // Select all links with the class "scroll-link"
+      const scrollLinks = document.querySelectorAll(".scroll-link");
 
+      scrollLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetId = link.getAttribute("data-target");
+          const targetSection = document.getElementById(targetId);
 
-<script>
-    // Select all links with the class "scroll-link"
-    const scrollLinks = document.querySelectorAll(".scroll-link");
+          if (targetSection) {
+            const yOffset = -50; // Adjust for fixed navbar if needed
+            const y =
+              targetSection.getBoundingClientRect().top +
+              window.pageYOffset +
+              yOffset;
 
-    scrollLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const targetId = link.getAttribute("data-target");
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                const yOffset = -50; // Adjust for fixed navbar if needed
-                const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-                window.scrollTo({ top: y, behavior: "smooth" });
-            }
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
         });
-    });
-</script>
-
-    
-</body>
+      });
+    </script>
+  </body>
 </html>
-
-
