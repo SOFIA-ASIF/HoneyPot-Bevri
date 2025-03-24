@@ -6,3 +6,23 @@
 2025-03-24 09:24:18,::1,admin,admin123\',"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid password
 2025-03-24 09:24:34,::1,admin,admin123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Successful login
 2025-03-24 09:24:55,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: ahmm ahmm
+2025-03-24 12:06:59,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: webdjebfkjrehfb
+2025-03-24 12:11:10,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:12:24,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:19:34,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: jhjhbhjbhj
+2025-03-24 12:31:20,::1,admin' -- ,trgdgtrf,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Successful login
+2025-03-24 12:32:25,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('ewkjnkjdnc')</script>
+2025-03-24 12:32:46,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alerts('ewkjnkjdnc')</script>
+2025-03-24 12:33:15,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alerts('ewkjnkjdnc');</script>
+2025-03-24 12:33:34,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('ewkjnkjdnc');</script>
+2025-03-24 12:33:40,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS');</script>
+2025-03-24 12:34:42,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:35:02,::1,admin123,trgdgtrf,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid credentials
+2025-03-24 12:35:12,::1,sofia,sofia123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid credentials
+2025-03-24 12:35:22,::1,admin,admin123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid credentials
+2025-03-24 12:35:31,::1,admin,admin123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid credentials
+2025-03-24 12:35:45,::1,admin' -- ,jhbjhbhj,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Successful login
+2025-03-24 12:36:20,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:37:08,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:39:30,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>
+2025-03-24 12:42:26,::1,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: <script>alert('XSS Attack');</script>

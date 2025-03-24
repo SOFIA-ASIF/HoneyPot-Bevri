@@ -10,16 +10,18 @@ error_reporting(E_ALL);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = isset($_SESSION['username']) ? $_SESSION['username'] : "Anonymous";
 
-    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
+    // Vulnerable: Directly using $_POST['comment'] without sanitization
+    $comment = $_POST['comment'];
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     $ip_address = $_SERVER['REMOTE_ADDR'];
 
-    // Save comment
+    // Save comment (still using prepared statements to prevent SQL injection)
     $stmt = $conn->prepare("INSERT INTO comments (username, comment) VALUES (?, ?)");
     $stmt->bind_param("ss", $username, $comment);
 
     if ($stmt->execute()) {
-        echo "Comment submitted successfully!";
+        // Directly echoing the unescaped comment (XSS vulnerability)
+        echo "Comment submitted successfully! ".$comment ;
 
         // Log the comment submission
         $pythonPath = "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe";
@@ -29,14 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Construct raw shell command (no escaping for honeypot vulnerability)
         $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \" \" \"$user_agent\" \"$activity\"";
 
-        // Execute and capture output
-        exec($command . " 2>&1", $output, $return_var);
-
-        if ($return_var !== 0) {
-            echo " Logging failed:\n" . implode("\n", $output);
-        } else {
-            echo " Logging succeeded!";
-        }
 
     } else {
         echo "Error submitting comment: " . $stmt->error;

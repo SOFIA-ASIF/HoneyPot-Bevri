@@ -2,8 +2,8 @@
 include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
     $ip_address = $_SERVER['REMOTE_ADDR'];
 
@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pythonPath = "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe";
     $scriptPath = "C:\\xampp\\htdocs\\HoneyPot\\app\\log_handler.py";
 
-    $query = "SELECT * FROM users WHERE username='$username'";
+    // Vulnerable query without escaping inputs
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
@@ -19,24 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
+        $activity = "Successful login";
+        $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
+        exec($command);
 
-        if (password_verify($password, $row['password'])) {
-            $activity = "Successful login";
-            $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
-            exec($command);
-
-            header("Location: ../index.html");
-            exit();
-        } else {
-            $activity = "Unsuccessful login - Invalid password";
-            $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
-            exec($command);
-
-            echo "Invalid username or password.";
-        }
+        header("Location: ../index.html");
+        exit();
     } else {
-        $activity = "Unsuccessful login - Username not found";
+        $activity = "Unsuccessful login - Invalid credentials";
         $command = "\"$pythonPath\" \"$scriptPath\" \"$ip_address\" \"$username\" \"$password\" \"$user_agent\" \"$activity\"";
         exec($command);
 
@@ -44,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 
 

@@ -2,10 +2,11 @@
 include '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    // Directly using POST data without escaping (vulnerable to SQL injection)
+    $comment = $_POST['comment'];
+    $username = $_POST['username'];
 
-    // Store the comment
+    // Store the comment (vulnerable query)
     $query = "INSERT INTO comments (username, comment) VALUES ('$username', '$comment')";
     if (mysqli_query($conn, $query)) {
         // Log the submission
