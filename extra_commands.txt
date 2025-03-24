@@ -1,0 +1,2 @@
+To check the prediction of the train model
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d "{\"activity_code\": 4, \"IP Frequency\": 7, \"User Agent Encoded\": 1, \"Activity Encoded\": 2, \"Hour\": 15, \"Day\": 23, \"Weekday\": 6}"

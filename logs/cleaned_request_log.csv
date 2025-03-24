@@ -1,0 +1,9 @@
+timestamp,ip,username,password,user_agent,activity,activity_code
+2025-03-23 14:08:26,Invalid IP,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: knkjnkjnkj,2
+2025-03-23 14:08:47,Invalid IP,sofia,sofia123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Successful login,5
+2025-03-23 14:08:59,Invalid IP,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: hello sofia here,1
+2025-03-24 08:43:19,Invalid IP,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: latest comment,3
+2025-03-24 08:56:42,Invalid IP,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: lmlk,4
+2025-03-24 09:24:18,Invalid IP,admin,admin123\',"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Unsuccessful login - Invalid password,6
+2025-03-24 09:24:34,Invalid IP,admin,admin123,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Successful login,5
+2025-03-24 09:24:55,Invalid IP,Anonymous, ,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",Comment submitted: ahmm ahmm,0
