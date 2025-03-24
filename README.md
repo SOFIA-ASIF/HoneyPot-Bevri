@@ -40,9 +40,9 @@ This project is a web-based honeypot designed to detect and log suspicious activ
 - Python 3.x  
 - XAMPP (for Apache and MySQL)  
 - Streamlit (for visualization)  
-- Required Python libraries (install using pip):  
+Run the following command to install all necessary dependencies:
   ```
-  pip install pandas flask scikit-learn streamlit
+  pip install -r requirements.txt
   ```
 
 ### Steps to Run  
