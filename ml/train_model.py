@@ -7,10 +7,19 @@ import joblib
 import os
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from datetime import datetime
+import os
 
-# File paths
-features_file = r"C:\xampp\htdocs\HoneyPot\logs\features.csv"
-model_path = r"C:\xampp\htdocs\HoneyPot\ml\random_forest_model.pkl"
+# Get the directory of the current script (e.g., ml_api.py or wherever you're writing this)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Build relative paths
+features_file = os.path.abspath(os.path.join(script_dir, "../logs/features.csv"))
+model_path = os.path.abspath(os.path.join(script_dir, "random_forest_model.pkl"))
+
+# Optional: Debug print
+print("Features File Path:", features_file)
+print("Model Path:", model_path)
+
 
 # Load existing data
 def load_features(file_path):

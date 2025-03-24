@@ -2,9 +2,17 @@ import pandas as pd
 import requests
 import json
 
+import os
+
+# Get current script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Build relative path to features.csv
+features_path = os.path.abspath(os.path.join(script_dir, "../logs/features.csv"))
+
 def get_latest_log():
     try:
-        data = pd.read_csv(r"C:\xampp\htdocs\HoneyPot\logs\features.csv")
+        data = pd.read_csv(features_path)
         
         # Drop the 'malicious' column if it exists
         if 'malicious' in data.columns:

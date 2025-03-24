@@ -2,9 +2,12 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 import os
 
-# File paths
-cleaned_log_path = r"C:\xampp\htdocs\HoneyPot\logs\cleaned_request_log.csv"
-features_path = r"C:\xampp\htdocs\HoneyPot\logs\features.csv"
+# Get the directory of the current script (data_preprocess.py)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct paths relative to the script's directory
+cleaned_log_path = os.path.abspath(os.path.join(script_dir, "../logs/cleaned_request_log.csv"))
+features_path = os.path.abspath(os.path.join(script_dir, "../logs/features.csv"))
 
 def load_data(file_path):
     try:

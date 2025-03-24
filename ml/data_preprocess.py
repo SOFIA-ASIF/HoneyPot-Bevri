@@ -1,8 +1,14 @@
 import pandas as pd
 import re
 
-# Path to the log CSV file
-log_file_path = "C:\\xampp\\htdocs\\HoneyPot\\logs\\request_log.csv"
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))  # Directory of data_preprocess.py
+log_file_path = os.path.join(script_dir, "../logs/request_log.csv")
+log_file_path = os.path.abspath(log_file_path)  # Resolve full path
+
+print(log_file_path)  # Debugging
+
 def load_data(file_path):
     """Load the log data from a CSV file."""
     try:
